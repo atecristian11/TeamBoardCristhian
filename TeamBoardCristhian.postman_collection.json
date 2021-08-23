@@ -1,0 +1,875 @@
+{
+	"info": {
+		"_postman_id": "5e77cbec-aaf3-4e71-a232-168d4db38fc6",
+		"name": "TeamBoardCristhian",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test 1 - Role",
+			"item": [
+				{
+					"name": "Create Role user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"user\",\r\n    \"description\": \"Regular user of the app\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/role/registerRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"role",
+								"registerRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Role Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"admin\",\r\n    \"description\": \"App administrator user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/role/registerRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"role",
+								"registerRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Role",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3219/api/role/listRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"role",
+								"listRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"61241175b553db350c4bc410\",\r\n    \"description\": \"Admin app\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/role/updateRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"role",
+								"updateRole"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test 2 - User",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Carlos\",\r\n    \"email\": \"carlos@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/user/registerUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"user",
+								"registerUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"carlos@gmail.com\",\r\n    \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3219/api/user/listUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"user",
+								"listUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"612412433d0ed12544d2d79c\",\r\n    \"name\": \"Xiomara Rincon\",\r\n    \"email\": \"juanitojaramillo@gmail.com\",\r\n    \"password\": \"5678\",\r\n    \"roleId\": \"6121cd67e115e448fcd855ed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/user/updateUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"user",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"_id\": \"612412433d0ed12544d2d79c\",\r\n \"dbStatus\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/user/deleteUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"user",
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test 3 - Board",
+			"item": [
+				{
+					"name": "Save Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Crear modulo role en app\",\r\n    \"description\": \"CRUD de role\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/board/saveTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"board",
+								"saveTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3219/api/board/listTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"board",
+								"listTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Uptade Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"_id\": \"6124161e3d0ed12544d2d7ba\",\r\n   \"taskStatus\": \"done\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/board/updateTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"board",
+								"updateTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3219/api/board/deleteTask/6124161e3d0ed12544d2d7ba",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"board",
+								"deleteTask",
+								"6124161e3d0ed12544d2d7ba"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test 5 - Img",
+			"item": [
+				{
+					"name": "Save Task Img",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "evidencia de imagen",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "subida a la bd",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Descargas/angular-logo.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/board/saveTaskImg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"board",
+								"saveTaskImg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Task Sin Img",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Prueba sin imagen",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "subida sin imagen",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/board/saveTaskImg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"board",
+								"saveTaskImg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test 4 - Admin",
+			"item": [
+				{
+					"name": "Register Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Antonio\",\r\n    \"email\": \"antonio@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"roleId\": \"61241175b553db350c4bc410\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/user/registerAdmin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"user",
+								"registerAdmin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"612419b03d0ed12544d2d7ce\",\r\n    \"name\": \"Antonio Salazar\",\r\n    \"email\": \"antonio@gmail.com\",\r\n    \"password\": \"\",\r\n    \"roleId\": \"6121cd67e115e448fcd855ed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/user/updateUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"user",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"_id\": \"612419b03d0ed12544d2d7ce\",\r\n \"dbStatus\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/user/deleteUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"user",
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3219/api/user/listUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"user",
+								"listUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Admin Filtro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3219/api/user/listUsers/car",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"user",
+								"listUsers",
+								"car"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"test\",\r\n    \"description\": \"test of the app\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/role/registerRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"role",
+								"registerRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3219/api/role/listRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"role",
+								"listRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTI0MTJhNDNkMGVkMTI1NDRkMmQ3YTAiLCJuYW1lIjoiQ2FybG9zIiwicm9sZUlkIjoiNjEyNDExNzViNTUzZGIzNTBjNGJjNDEwIiwiaWF0IjoxNjI5NzU0MTg1fQ.x-rSt7LYEk9lysgOdgyn_-65tVIptN-O3pQfprwZL4A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"_id\": \"61241b593d0ed12544d2d7e2\",\r\n    \"description\": \"test of the app edit\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3219/api/role/updateRole",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3219",
+							"path": [
+								"api",
+								"role",
+								"updateRole"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
