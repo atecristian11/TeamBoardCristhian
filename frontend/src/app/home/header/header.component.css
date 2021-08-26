@@ -1,0 +1,15 @@
+.headerSpacer {
+  /*nos separa la primera parte de la ultima da un espacio entre los campos del menu */
+  flex: 1 1 auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  margin: auto;
+  padding: 10px 0 0 0;
+}
+
+.bgHeader {
+  background-color: #000000;
+}
