@@ -32,7 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //con este le estamos diciendo que todas las apis las vamos a manejar por http
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; //el http interceptor sirve para eliminar el token apenas se cierre sesion del front
 
 //esta es la api de angular material para que nos actualice todos los compenentes que utilicemos este es el menu
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -50,6 +50,12 @@ import { MatInputModule } from '@angular/material/input';
 
 //para importar el modulo de mensajes que le vamos a mostrar al usaurio
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+//para importar el modulo acordeones de material
+import { MatExpansionModule } from '@angular/material/expansion';
+
+//para importar el modulo de iconos de material
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -80,12 +86,18 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatCardModule,
     MatInputModule,
     MatSnackBarModule,
+    MatExpansionModule,
+    MatIconModule,
   ],
   providers: [
     UserService,
     RoleService,
     BoardService,
-    TokenInterceptorService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService, //para decir que el interceptor se saca de la case token
+      multi: true, //para que pueda recibir varios token al tiempo en la pagina
+    },
     AuthGuard,
   ], //todos los servicios se llaman aca debido a que se van a proveer servicios
   bootstrap: [AppComponent],

@@ -1,1 +1,38 @@
-<p>login works!</p>
+<div class="bgComponent">
+  <div class="form">
+    <mat-card class="card">
+      <mat-card-title>Login User</mat-card-title>
+      <!-- para agregarle el titulo a la card -->
+      <mat-card-content>
+        <div class="container">
+          <mat-form-field>
+            <!-- item de un formulario -->
+            <input
+              [(ngModel)]="loginData.email"
+              type="email"
+              matInput
+              placeholder="Email"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <!-- item de un formulario -->
+            <input
+              [(ngModel)]="loginData.password"
+              type="password"
+              matInput
+              placeholder="Password"
+              required
+            />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="login()" class="button colorButton" mat-raised-button>
+          Go!!
+        </button>
+        <br /><br />
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Router, CanActivate } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
+  constructor(private _userService: UserService, private _router: Router) {}
+
+  canActivate(): boolean {
+    if (!this._userService.loggedIn()) {
+      //aqui validamos si hay token o no
+      this._router.navigate(['/login']); //si no hay ningun token siempre lo mandara al login
+      return false; //para que no pueda ver las url si no esta logueado
+    } else {
+      return true; //si puede ver las url que estan protegidas
+    }
   }
-  
 }

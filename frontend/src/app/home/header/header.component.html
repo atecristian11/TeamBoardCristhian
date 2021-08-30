@@ -1,17 +1,27 @@
 <mat-toolbar class="bgHeader">
   <ul>
-    <a mat-button routerLink="lisTask">List Task</a>
+    <a *ngIf="_userService.loggedIn()" mat-button routerLink="lisTask"
+      >List Task</a
+    >
+    <!-- si el token es true esta url aparece debido al *ngIf ya que es una sentencia gracias a angular -->
   </ul>
   <ul>
-    <a mat-button routerLink="saveTask">Create Task</a>
+    <a *ngIf="_userService.loggedIn()" mat-button routerLink="saveTask"
+      >Create Task</a
+    >
   </ul>
   <ul>
-    <a mat-button routerLink="listUser">Admin</a>
+    <a *ngIf="_userService.loggedIn()" mat-button routerLink="listUser"
+      >Admin</a
+    >
   </ul>
   <span class="headerSpacer"></span>
   <ul>
-    <a mat-button routerLink="signUp">Sign Up</a>
-    <a mat-button routerLink="login">Login</a>
-    <a mat-button>Logout</a>
+    <!-- si no hay token si aparece esta url -->
+    <a mat-button routerLink="signUp" *ngIf="!_userService.loggedIn()"
+      >Sign Up</a
+    >
+    <a mat-button routerLink="login" *ngIf="!_userService.loggedIn()">Login</a>
+    <a mat-button *ngIf="_userService.loggedIn()" (click)="_userService.logout()">Logout</a> <!-- con el click invocamos la funcion de logout para que elimine el token y asi cierre sesion -->
   </ul>
 </mat-toolbar>

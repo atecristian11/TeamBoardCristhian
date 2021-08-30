@@ -11,6 +11,9 @@ import { SaveTaskComponent } from './board/save-task/save-task.component';
 import { LoginComponent } from './home/login/login.component';
 import { RegisterComponent } from './home/register/register.component';
 
+//importamos el guard
+import { AuthGuard } from './guard/auth.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -20,10 +23,12 @@ const routes: Routes = [
   {
     path: 'lisTask',
     component: ListTaskComponent,
+    canActivate: [AuthGuard], //se agrega para bloquear el acceso si no esta logueado
   },
   {
     path: 'saveTask',
     component: SaveTaskComponent,
+    canActivate: [AuthGuard], //se agrega para bloquear el acceso si no esta logueado
   },
   {
     path: 'login',
@@ -36,26 +41,32 @@ const routes: Routes = [
   {
     path: 'listUser',
     component: ListUserComponent,
+    canActivate: [AuthGuard], //se agrega para bloquear el acceso si no esta logueado
   },
   {
     path: 'registerUser',
     component: RegisterUserComponent,
+    canActivate: [AuthGuard], //se agrega para bloquear el acceso si no esta logueado
   },
   {
     path: 'updateUser',
     component: UpdateUserComponent,
+    canActivate: [AuthGuard], //se agrega para bloquear el acceso si no esta logueado
   },
   {
     path: 'registerRole',
     component: RegisterRoleComponent,
+    canActivate: [AuthGuard], //se agrega para bloquear el acceso si no esta logueado
   },
   {
     path: 'listRole',
     component: ListRoleComponent,
+    canActivate: [AuthGuard], //se agrega para bloquear el acceso si no esta logueado
   },
   {
     path: 'updateRole',
     component: UpdateRoleComponent,
+    canActivate: [AuthGuard], //se agrega para bloquear el acceso si no esta logueado
   },
 ];
 
