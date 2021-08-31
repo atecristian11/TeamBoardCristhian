@@ -33,6 +33,13 @@
           <mat-panel-description>
             {{ task.description }}
           </mat-panel-description>
+          <mat-panel-description>
+            <img
+              class="card-img-top image_center"
+              src="{{ task.imageUrl }}"
+            />
+            <!-- para agregar la imagen al html y que se vea -->
+          </mat-panel-description>
           <mat-action-row>
             <button
               class="btnSelectTodo"

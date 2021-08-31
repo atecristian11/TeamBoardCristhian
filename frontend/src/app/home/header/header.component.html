@@ -22,6 +22,12 @@
       >Sign Up</a
     >
     <a mat-button routerLink="login" *ngIf="!_userService.loggedIn()">Login</a>
-    <a mat-button *ngIf="_userService.loggedIn()" (click)="_userService.logout()">Logout</a> <!-- con el click invocamos la funcion de logout para que elimine el token y asi cierre sesion -->
+    <a
+      mat-button
+      *ngIf="_userService.loggedIn()"
+      (click)="_userService.logout()"
+      >Logout</a
+    >
+    <!-- con el click invocamos la funcion de logout para que elimine el token y asi cierre sesion -->
   </ul>
 </mat-toolbar>

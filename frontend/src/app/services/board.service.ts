@@ -28,4 +28,8 @@ export class BoardService {
   deleteTask(board: any) {
     return this._http.delete<any>(this.env + 'board/deleteTask/' + board._id); //para poder eliminar se concatena el board id porque con el json no se podria borrar
   }
+
+  saveTaskImg(board: any) {
+    return this._http.post<any>(this.env + 'board/saveTaskImg', board); //guardamos lo que ingreso el usuario en el json de board
+  }
 }

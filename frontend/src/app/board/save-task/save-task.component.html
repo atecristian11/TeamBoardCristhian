@@ -26,8 +26,11 @@
         </div>
       </mat-card-content>
       <mat-card-actions>
+        <input type="file" (change)="uploadImg($event)"/> 
+      </mat-card-actions>
+      <mat-card-actions>
         <button
-          (click)="saveTask()"
+          (click)="saveTaskImg()"
           class="button colorButton"
           mat-raised-button
         >
